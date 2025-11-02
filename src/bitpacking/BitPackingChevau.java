@@ -1,7 +1,5 @@
 package bitpacking;
 
-import java.util.*;
-
 /** Deuxième méthode : avec chevauchelent */
 
 public class BitPackingChevau extends BitPacking {
@@ -23,7 +21,7 @@ public class BitPackingChevau extends BitPacking {
             if (liste_non_compresse[i] > max) max = liste_non_compresse[i];
         }
 
-        // nombre de bits nécessaires pour le plus grand entier (fonction de calcul trouvé sur chat gpt aussi)
+        // nombre de bits nécessaires pour le plus grand entier 
         nbr_bit = (int) Math.ceil(Math.log(max + 1) / Math.log(2));
 
         // je définis mon masque 

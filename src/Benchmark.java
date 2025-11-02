@@ -39,7 +39,7 @@ public class Benchmark {
                 compresse.length
             );
 
-            // Vérification d'intégrité (optionnelle)
+            // Vérification d'intégrité 
             if (!Arrays.equals(liste, decompresse)) {
                 System.out.println("⚠️ Erreur de décompression pour " + type);
             }

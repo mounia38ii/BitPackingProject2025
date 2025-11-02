@@ -12,7 +12,6 @@ public class Main {
         String fichierPath = args[0];
         List<Integer> listeTemp = new ArrayList<>();
 
-        // Lecture du fichier
         try (Scanner scanner = new Scanner(new File(fichierPath))) {
             while (scanner.hasNextInt()) {
                 listeTemp.add(scanner.nextInt());
@@ -26,14 +25,14 @@ public class Main {
         int[] liste = listeTemp.stream().mapToInt(Integer::intValue).toArray();
         System.out.println("Liste originale : " + Arrays.toString(liste));
 
-        // Utilisation de la factory pour créer automatiquement la bonne méthode
+        // Utilisation de la factory 
         BitPacking bp = BitPacking.create(fichierPath);
 
         // Compression
         int[] listeCompresse = bp.compress(liste);
         System.out.println("Liste compressée : " + Arrays.toString(listeCompresse));
 
-        // Décompression pour vérification
+        // Décompression 
         int[] listeDecompresse = new int[liste.length];
         bp.decompress(listeDecompresse);
         System.out.println("Liste décompressée : " + Arrays.toString(listeDecompresse));
